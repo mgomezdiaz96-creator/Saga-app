@@ -193,3 +193,5 @@
   document.addEventListener('click',e=>{const check=e.target.closest('.resource-check[data-check]');if(check){e.preventDefault();e.stopImmediatePropagation();const id=check.dataset.check;state.checklist[id]=!state.checklist[id];localStorage.setItem('curio-checklist',JSON.stringify(state.checklist));render();if(activeResources().every(r=>state.checklist[r.id]))setTimeout(()=>celebrate(),250);}},true);</script>
 </body>
 </html>
+
+<style>.gallery-resource-actions .resource-check{width:28px;height:28px;border:1.5px solid #87958e;border-radius:50%;background:#fff;color:transparent;display:grid;place-items:center;font-size:14px;line-height:1;cursor:pointer;touch-action:manipulation;transition:background .16s,border-color .16s,transform .16s}.gallery-resource-actions .resource-check:hover{border-color:#087b78;transform:scale(1.06)}.gallery-resource-actions .resource-check:focus-visible{outline:3px solid #f2c65a;outline-offset:3px}.gallery-resource.done .gallery-resource-actions .resource-check{background:#087b78;border-color:#087b78;color:#fff;box-shadow:0 0 0 3px #087b781a}</style>  
